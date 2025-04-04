@@ -1,9 +1,5 @@
 // API base URL based on environment
-const isDevelopment = import.meta.env.DEV;
-
-export const API_BASE_URL = isDevelopment 
-  ? 'http://127.0.0.1:8000' 
-  : 'https://api.quantumfix.com'; // Replace with your production API URL
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000';
 
 // API endpoints
 export const API_ENDPOINTS = {
