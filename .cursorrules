@@ -1,0 +1,60 @@
+# QuantumFix Website Project Rules
+
+## Directory Structure
+- Frontend code is in `frontend/animated-business-hub/` 
+- Backend code is in `backend/` directory
+- Django project settings are in `backend/QuantumFix/settings.py`
+- Contact form functionality is in `backend/contactform/`
+
+## Code Style & Patterns
+
+### Frontend
+- Use TypeScript for all new components
+- Follow existing component structure in `src/components/`
+- Use Tailwind CSS for styling with custom colors from tailwind.config.ts
+- Implement animations using Framer Motion
+- Form state should be managed with React hooks
+- Component names should use PascalCase
+- Files should be named the same as the main component they export
+
+### Backend
+- Follow Django REST Framework patterns for API endpoints
+- Use class-based views where possible
+- Models should include string representation methods
+- Admin classes should customize display and filtering options
+- Proper serializer validation should be implemented
+
+## Development Workflow
+- Run frontend with `cd frontend/animated-business-hub && npm run dev`
+- Run backend with `cd backend && python manage.py runserver`
+- For database issues, consider using SQLite for development if PostgreSQL causes problems
+- All endpoints should be tested with proper request data
+
+## API Conventions
+- API endpoints use `/api/` prefix
+- Contact form submissions go to `/api/contact/`
+- Response format follows standard JSON with proper status codes
+- Error responses include descriptive messages
+
+## UI/UX Preferences
+- Animations should be subtle and enhance user experience
+- Form feedback should be immediate and clear
+- Error states should be visually distinct
+- Primary color scheme uses '#FAF1E6', '#3C3D37' and complementary colors
+
+## Testing Strategy
+- Frontend components should have unit tests
+- API endpoints should have integration tests
+- Form submission should be tested end-to-end
+
+## Performance Considerations
+- Minimize unnecessary re-renders in React components
+- Optimize image sizes for web
+- Use pagination for any list views that may grow large
+- Consider code splitting for larger bundles
+
+## Security Practices
+- Always validate input on both frontend and backend
+- Use CSRF protection for all POST requests
+- Implement proper CORS settings
+- Consider rate limiting for public endpoints 
